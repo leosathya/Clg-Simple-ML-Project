@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Diabetis Prediction</title>
+
+		<!-- Owl-Carousel -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+			integrity="sha256-UhQQ4fxEeABh4JrcmAJ1+16id/1dnlOEVCFOxDef9Lw="
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+			integrity="sha256-kksNxjDRxd/5+jGurZUJd1sdR2v+ClrCl3svESBaJqw="
+			crossorigin="anonymous"
+		/>
+
+		<!-- Font Awesome CDN -->
+		<script src="https://kit.fontawesome.com/23412c6a8d.js"></script>
+
+		<!-- Custom Style-->
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="{{ url_for('static', filename='result.css') }}"
+		/>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="panel">
+				<div class="row">
+					<div class="col liquid">
+						<h4><i class="fas fa-drafting-compass"></i> The MediCo.</h4>
+					</div>
+					<div class="col login"></div>
+
+					<!-- Pop Up-->
+					{%if data == 1%}
+					<div class="content" id="popup">
+						<div class="header">
+							<h2>Result Card</h2>
+						</div>
+						<label for="click" class="fas fa-check"></label>
+						<h3>Congrats !!🎊🎉</h3>
+						<p>You are Healthy, No Disease detected.</p>
+						<p>
+							You have right amount of Glucose, Insulin. Your Diabetes Pedigree
+							Function quit good <br />BP is Normal.
+						</p>
+						<div class="line"></div>
+
+						<button type="button" class="btn btn-back">
+							<a href="/diabetis"> Back-> </a>
+						</button>
+					</div>
+					{%else%}
+					<div class="content" id="popup">
+						<div class="header">
+							<h2>Result Card</h2>
+							<!--<label for="click" class="fas fa-times"></label> -->
+						</div>
+						<label for="click" class="fas fa-times"></label>
+						<h3>Sorry, You Suffers from Diabetis</h3>
+						<p>Please have a appoentment with Doctor.</p>
+						<p>
+							Your DiabetesPedigreeFunction not seems good. You have low level
+							of Insulin <br />Your BP not looks good.
+						</p>
+						<div class="line"></div>
+
+						<button type="button" class="btn btn-signup">
+							<a href="/diabetis"> Back-> </a>
+						</button>
+					</div>
+					{%endif%}
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

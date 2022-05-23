@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Heart Disease Detection</title>
+
+		<!-- Owl-Carousel -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+			integrity="sha256-UhQQ4fxEeABh4JrcmAJ1+16id/1dnlOEVCFOxDef9Lw="
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+			integrity="sha256-kksNxjDRxd/5+jGurZUJd1sdR2v+ClrCl3svESBaJqw="
+			crossorigin="anonymous"
+		/>
+
+		<!-- Font Awesome CDN -->
+		<script src="https://kit.fontawesome.com/23412c6a8d.js"></script>
+
+		<!-- Custom Style-->
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="{{ url_for('static', filename='heart.css') }}"
+		/>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="panel">
+				<div class="row">
+					<div class="col liquid">
+						<h4><i class="fas fa-drafting-compass"></i> The MediCo.</h4>
+
+						<!-- Owl-Carousel -->
+
+						<div class="owl-carousel owl-theme">
+							<img
+								src="{{ url_for('static', filename='pic4.png') }}"
+								alt=""
+								class="login_img"
+							/>
+							<img
+								src="{{ url_for('static', filename='pic7.png') }}"
+								alt=""
+								class="login_img"
+							/>
+							<img
+								src="{{ url_for('static', filename='pic8.png') }}"
+								alt=""
+								class="login_img"
+							/>
+							<img
+								src="{{ url_for('static', filename='pic5.png') }}"
+								alt=""
+								class="login_img"
+							/>
+							<img
+								src="{{ url_for('static', filename='pic2.png') }}"
+								alt=""
+								class="login_img"
+							/>
+						</div>
+
+						<!-- /Owl-Carousel -->
+					</div>
+					<div class="col login">
+						<button type="button" class="btn btn-signup">
+							<a href="/"> Back-> </a>
+						</button>
+						<form action="/heartPredict" method="post">
+							<div class="titles">
+								<h6>We keep everything ready</h6>
+								<h3>Try Our Diabetis Predicting Model</h3>
+							</div>
+
+							<div class="group-item">
+								<div class="form-group">
+									<input
+										type="text"
+										name="age"
+										placeholder="Age"
+										required="required"
+										class="form-input"
+									/>
+								</div>
+								<div class="form-group">
+									<input
+										type="text"
+										name="sex"
+										placeholder="Sex"
+										required="required"
+										class="form-input"
+									/>
+								</div>
+							</div>
+							<div class="group-item">
+								<div class="form-group">
+									<input
+										type="text"
+										name="chest pain"
+										placeholder="Chest Pain"
+										required="required"
+										class="form-input"
+									/>
+								</div>
+								<div class="form-group">
+									<input
+										type="text"
+										name="resting blood pressure"
+										placeholder="Resting Blood Pressure"
+										required="required"
+										class="form-input"
+									/>
+								</div>
+							</div>
+							<div class="group-item">
+								<div class="form-group">
+									<input
+										type="text"
+										name="serum cholestoral"
+										placeholder="Serum Cholestoral in mg/dl"
+										required="required"
+										class="form-input"
+									/>
+								</div>
+								<div class="form-group">
+									<input
+										type="text"
+										name="fasting blood sugar"
+										placeholder="Fasting Blood Sugar"
+										required="required"
+										class="form-input"
+									/>
+								</div>
+							</div>
+							<div class="group-item">
+								<div class="form-group">
+									<input
+										type="text"
+										name="resting electrocardiographic results"
+										placeholder="Resting Electrocardiographic Results"
+										required="required"
+										class="form-input"
+									/>
+								</div>
+								<div class="form-group">
+									<input
+										type="text"
+										name="maximum heart rate"
+										placeholder="Maximum Heart Rate"
+										required="required"
+										class="form-input"
+									/>
+								</div>
+							</div>
+							<div class="group-item">
+								<div class="form-group">
+									<input
+										type="text"
+										name="exercise induced angina"
+										placeholder="Exercise Induced Angina"
+										required="required"
+										class="form-input"
+									/>
+								</div>
+								<div class="form-group">
+									<input
+										type="text"
+										name="oldpeak"
+										placeholder="Oldpeak"
+										required="required"
+										class="form-input"
+									/>
+								</div>
+							</div>
+							<div class="group-item">
+								<div class="form-group">
+									<input
+										type="text"
+										name="slope of ST segment"
+										placeholder="Slope Of ST Segment"
+										required="required"
+										class="form-input"
+									/>
+								</div>
+								<div class="form-group">
+									<input
+										type="text"
+										name="number of major vessels"
+										placeholder="Number Of Major Vessels"
+										required="required"
+										class="form-input"
+									/>
+								</div>
+							</div>
+							<div class="form-group">
+								<input
+									type="text"
+									name="thal"
+									placeholder="Thal"
+									required="required"
+									class="form-input"
+								/>
+							</div>
+
+							<button type="submit" class="btn btn-login">Predict</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+			integrity="sha256-pTxD+DSzIwmwhOqTFN+DB+nHjO4iAsbgfyFq5K5bcE0="
+			crossorigin="anonymous"
+		></script>
+
+		<script>
+			$(document).ready(function () {
+				$(".owl-carousel").owlCarousel({
+					loop: true,
+					autoplay: true,
+					autoplayTimeout: 2000,
+					autoplayHoverPause: true,
+					items: 1,
+				});
+			});
+		</script>
+	</body>
+</html>
